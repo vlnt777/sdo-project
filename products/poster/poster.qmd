@@ -1,0 +1,103 @@
+---
+title: This is an academic poster with typst and quarto!
+format:
+  poster-typst: 
+    size: "36x24"
+    poster-authors: "A. Smith, B. Jones, C. Brown"
+    departments: "Department of Something"
+    institution-logo: "./media/logo.png"
+    footer-text: "Some Conference"
+    footer-url: ""
+    footer-emails: "abc@example.com"
+    footer-color: "ebcfb2"
+    keywords: ["Poster", "Typst", "Quarto"]
+---
+
+
+# Background
+
+* This is a poster created with Quarto using the Typst system.
+* It is based on this template and extension: https://github.com/quarto-ext/typst-templates/tree/main/poster
+* Typst can't run code, therefore any tables one want to include need to be generated and saved as figures outside of this document. 
+* There is unfortunately currently no robust way to make posters with Quarto yet. If you have suggestions for better Quarto-based alternatives, please let us know!
+
+# Abstract
+
+Abstract of your project.
+
+# Methods
+
+One can do equations.
+
+$$
+\sum_(k=1)^n k = \frac{(n(n+1))}{2} = \frac{(n^2 + n)}{2}
+$$
+
+
+# Result
+
+This shows a figure created by the analysis script. It is inserted using Quarto/Markdown syntax (not knitr code, but that would be possible too).
+
+![Figure caption.](./media/height-weight.png){fig-align="center" width="420"}
+
+And here is a table.
+
+```{r}
+#| label: tbl-summarytable
+#| tbl-cap: "Data summary table."
+#| echo: FALSE
+resulttable=readRDS("./media/summarytable.rds")
+knitr::kable(resulttable)
+```
+
+
+Here is another figure, now using a code chunk.
+
+
+```{r}
+#| label: fig-2
+#| echo: FALSE
+#| fig-cap: "Caption for this figure."
+knitr::include_graphics("./media/height-weight-stratified.png")
+```
+
+## Aonther subsection with results
+
+This shows the model fitting results as table.
+
+```{r}
+#| label: tbl-resulttable2
+#| tbl-cap: "Linear model fit table."
+#| echo: FALSE
+resulttable2 = readRDS("./media/resulttable2.rds")
+knitr::kable(resulttable2)
+```
+
+
+
+
+# Discussion
+
+We did some analysis.
+
+
+
+# Acknowledgements
+<div class="special">
+This project is partially supported by NIH contract 75N93019C00060.
+</div>
+
+
+# Lorem ipsum dolor.
+
+::: {.block fill="luma(230)" inset="8pt" radius="4pt"}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in voluptatem, ut postea variari voluptas distinguique possit, augeri amplifi- carique non possit. At etiam Athenis, ut e patre audiebam facete et urbane Stoicos irridente, statua est in quo a nobis philosophia defensa et.
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+:::
+
+
